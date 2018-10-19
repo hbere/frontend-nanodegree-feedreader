@@ -2,6 +2,13 @@
 
 This is a project to explore test-driven development as part of Udacity's Front-End Engineering Nanodegree course. This project was cloned from the original located [here](https://github.com/udacity/frontend-nanodegree-feedreader).
 
+# QUICK START
+
+To run this application, please follow these steps:
+1. Open index.html
+2. Scroll to the bottom of the page
+3. Double-check that all Jasmine tests are passing
+
 # =======================================
 
 # Project Overview from [Original GitHub Repo](https://github.com/udacity/frontend-nanodegree-feedreader)
