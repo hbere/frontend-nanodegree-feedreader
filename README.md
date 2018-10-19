@@ -10,6 +10,22 @@ To run this application, please follow these steps:
 3. Scroll to the bottom of the page
 4. Double-check that all Jasmine tests are passing
 
+# INCLUDED TESTS
+## Test Suite #1: RSS Feeds...
+1. are defined
+2. have nonempty URLs
+3. have nonempty names
+
+## Test Suite #2: The Menu...
+1. is hidden by default
+2. changes visibility when the menu icon is clicked
+
+## Test Suite #3: Initial Entries...
+1. .feed container includes at least one .entry element after loadFeed
+
+## Test Suite #4: New Feed Selection...
+1. content changes after loadFeed function loads a new feed
+
 # =======================================
 
 # Project Overview from [Original GitHub Repo](https://github.com/udacity/frontend-nanodegree-feedreader)
