@@ -79,6 +79,7 @@ $(
          */
       it("is hidden by default", function() {
         expect(document.body.classList.contains("menu-hidden")).toBe(true);
+        // document.querySelector('body').has
       });
 
       /* TODO: Write a test that ensures the menu changes
@@ -91,9 +92,14 @@ $(
         expect(document.querySelectorAll(".menu-icon-link").length > 0).toBe(
           true
         );
-        // does the menu display when
-
-        // does the menu hide when clicked again.
+        // check the menu displays when clicked
+        // the click should be simulated
+        // https://api.jquery.com/trigger/
+        $(".menu-icon-link").trigger("click");
+        expect(document.body.classList.contains("menu-hidden")).toBe(false);
+        // check the menu hides when clicked again
+        $(".menu-icon-link").trigger("click");
+        expect(document.body.classList.contains("menu-hidden")).toBe(true);
       });
     });
 
@@ -105,8 +111,19 @@ $(
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-      it(".feed container includes at least one .entry element after loadFeed", function() {
-        expect(1 === 1).toBe(true);
+
+      let feedLen;
+
+      beforeEach(function(done) {
+        loadFeed(0, done);
+      });
+
+      it(".feed container includes at least one .entry element after loadFeed", function(done) {
+        feedLen = document.querySelectorAll(".entry").length;
+        expect(feedLen).toBeGreaterThan(0);
+        // alert(document.querySelectorAll(".entry").length);
+        // alert(feedLen);
+        done();
       });
     });
 
@@ -116,9 +133,25 @@ $(
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-      it("content changes after loadFeed function loads a new feed", function() {
-        expect(1 === 1).toBe(true);
+      let name0, name1;
+
+      beforeEach(function(done) {
+        loadFeed(1, function() {
+          name1 = document.querySelector('article').innerText;
+          loadFeed(0, function() {
+            name0 = document.querySelector('article').innerText;
+            done()
+          });
+        });
+      });
+
+      it("content changes after loadFeed function loads a new feed", function(done) {
+        // alert(name0);
+        // alert(name1);
+        expect(name0 == name1).not.toBe(true);
+        done();
       });
     });
+
   })()
 );
