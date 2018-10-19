@@ -2,7 +2,7 @@
 
 This is a project to explore test-driven development as part of Udacity's Front-End Engineering Nanodegree course. This project was cloned from the original located [here](https://github.com/udacity/frontend-nanodegree-feedreader).
 
-#==================================
+# =======================================
 
 # Project Overview
 
