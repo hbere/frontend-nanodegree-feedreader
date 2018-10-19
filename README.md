@@ -5,7 +5,7 @@ This is a project to explore test-driven development as part of Udacity's Front-
 # QUICK START
 
 To run this application, please follow these steps:
-1. Download/close the project
+1. Download or clone the project
 2. Open index.html in a web browser
 3. Scroll to the bottom of the page
 4. Double-check that all Jasmine tests are passing
